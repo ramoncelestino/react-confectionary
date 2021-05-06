@@ -1,0 +1,14 @@
+.card_module {
+  background: var(--primary-pink);
+  width: 15rem;
+  height: 15rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px 4px rgba(210, 150, 150, 0.8);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
