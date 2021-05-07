@@ -2,9 +2,12 @@ import styles from './cardmodule.module.scss';
 
 const CardModule = (props) => {
   return (
-    <div className={styles.card_module}>
-      <h1>Test</h1>
-    </div>
+    <a href={props.link}>
+      <div className={styles.card_module}>
+        <i className={props.icon}></i>
+        <h3>{props.name}</h3>
+      </div>
+    </a>
   );
 };
 

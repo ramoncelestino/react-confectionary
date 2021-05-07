@@ -37,49 +37,80 @@ const OrderForm = (props) => {
     };
     props.onSaveOrder(newOrder);
   };
+
+  const cancelHandler = () => {
+    props.onCancelOrder(false);
+  };
+
   return (
     <div className={styles.order_form}>
-      <form onSubmit={submitOrder}>
+      <form>
         <div className="form-group">
-          <label>Customer: </label>
-          <input
-            className="form-control"
-            type="text"
-            value={inputCustomerName}
-            onChange={customerNameChange}
-          ></input>
+          <div className="row">
+            <div className="col-md-6">
+              <label>Customer: </label>
+              <input
+                className="form-control"
+                type="text"
+                value={inputCustomerName}
+                onChange={customerNameChange}
+              ></input>
+            </div>
+            <div className="col-md-6">
+              <label>Email: </label>
+              <input
+                className="form-control"
+                type="text"
+                value={inputCustomerEmail}
+                onChange={customerEmailChange}
+              ></input>
+            </div>
+          </div>
         </div>
+
         <div className="form-group">
-          <label>Email: </label>
-          <input
-            className="form-control"
-            type="text"
-            value={inputCustomerEmail}
-            onChange={customerEmailChange}
-          ></input>
+          <div className="row">
+            <div className="col-md-6">
+              <label>Phone: </label>
+              <input
+                className="form-control"
+                type="text"
+                value={inputCustomerPhone}
+                onChange={customerPhoneChange}
+              ></input>
+            </div>
+            <div className="col-md-6">
+              <label>Delivered At: </label>
+              <input
+                className="form-control"
+                type="date"
+                value={inputDeliveredAt}
+                onChange={deliveredChange}
+              ></input>
+            </div>
+          </div>
         </div>
+
         <div className="form-group">
-          <label>Phone: </label>
-          <input
-            className="form-control"
-            type="text"
-            value={inputCustomerPhone}
-            onChange={customerPhoneChange}
-          ></input>
-        </div>
-        <div className="form-group">
-          <label>Delivered At: </label>
-          <input
-            className="form-control"
-            type="date"
-            value={inputDeliveredAt}
-            onChange={deliveredChange}
-          ></input>
-        </div>
-        <div className="form-group">
-          <button className="btn btn-primary form-control" type="submit">
-            Save
-          </button>
+          <div className="row">
+            <div className="col-md-6">
+              <button
+                className="btn btn-primary form-control"
+                cnClick={cancelHandler}
+              >
+                Cancel
+              </button>
+            </div>
+            <div className="col-md-6">
+              <button
+                className="btn btn-primary form-control"
+                type="submit"
+                onClick={submitOrder}
+              >
+                Save
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

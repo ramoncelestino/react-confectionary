@@ -1,3 +1,11 @@
 .app {
-  padding: 3rem;
+  width: 60%;
+  height: 100vh;
+  margin: auto;
+}
+
+@media (max-width: 720px) {
+  .app {
+    width: 90%;
+  }
 }

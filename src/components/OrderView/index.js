@@ -33,7 +33,13 @@ const OrderView = () => {
     },
   ];
 
+  const [newOrder, setNewOrder] = useState(false);
+
   const [orderData, setOrderData] = useState(data);
+
+  const createNewOrderHandler = () => {
+    setNewOrder(true);
+  };
 
   const newOrderHandler = (newOrder) => {
     setOrderData(() => {
@@ -41,9 +47,18 @@ const OrderView = () => {
     });
   };
 
+  const cancelOrderHandler = () => {
+    setNewOrder(false);
+  };
+
   return (
     <div className={styles.order_view}>
-      <NewOrder onNewOrder={newOrderHandler} />
+      <button className="btn btn-primary mt-5" onClick={createNewOrderHandler}>
+        Click
+      </button>
+      {newOrder && (
+        <NewOrder onNewOrder={newOrderHandler} onCancel={cancelOrderHandler} />
+      )}
       <Orders orders={orderData} />
     </div>
   );
