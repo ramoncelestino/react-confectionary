@@ -38,10 +38,13 @@ const OrderView = () => {
   const [orderData, setOrderData] = useState(data);
 
   const createNewOrderHandler = () => {
-    setNewOrder(true);
+    setNewOrder(newOrder ? false : true);
   };
 
   const newOrderHandler = (newOrder) => {
+    setFilteredData(() => {
+      return [newOrder, ...filteredData];
+    });
     setOrderData(() => {
       return [newOrder, ...orderData];
     });
@@ -51,15 +54,39 @@ const OrderView = () => {
     setNewOrder(false);
   };
 
+  const [searchedName, setSearchedName] = useState();
+
+  const changeNameHandler = (event) => {
+    setSearchedName(event.target.value);
+  };
+
+  const [filteredData, setFilteredData] = useState(orderData);
+  const searchOrderHandler = (event) => {
+    setFilteredData(
+      orderData.filter((order) => order.customer_name == searchedName)
+    );
+  };
+
   return (
     <div className={styles.order_view}>
-      <button className="btn btn-primary mt-5" onClick={createNewOrderHandler}>
-        Click
-      </button>
+      <div className={styles.search}>
+        <input
+          className="form-control"
+          type="text"
+          onChange={changeNameHandler}
+        ></input>
+        <button className="btn" type="submit" onClick={searchOrderHandler}>
+          <i className="fas fa-search "></i>
+        </button>
+        <button className="btn" type="submit" onClick={createNewOrderHandler}>
+          {newOrder && <i className="fas fa-minus "></i>}
+          {!newOrder && <i className="fas fa-plus "></i>}
+        </button>
+      </div>
       {newOrder && (
         <NewOrder onNewOrder={newOrderHandler} onCancel={cancelOrderHandler} />
       )}
-      <Orders orders={orderData} />
+      <Orders orders={filteredData} />
     </div>
   );
 };

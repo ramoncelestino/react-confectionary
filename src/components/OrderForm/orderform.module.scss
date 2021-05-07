@@ -1,7 +1,17 @@
 .order_form {
-  background: var(--primary-pink);
+  background: var(--terciary-green);
   min-height: 8rem;
   padding: 2rem;
   margin: auto;
   border-radius: 1rem;
+
+  button {
+    background: var(--primary-pink);
+    color: white;
+
+    &:hover {
+      color: white;
+      background: var(--secondary-pink);
+    }
+  }
 }

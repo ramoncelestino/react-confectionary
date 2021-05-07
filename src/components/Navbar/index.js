@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container">
-        <h2>RC</h2>
+        <h2>Viviane Celestino</h2>
         <button
           class="navbar-toggler"
           type="button"

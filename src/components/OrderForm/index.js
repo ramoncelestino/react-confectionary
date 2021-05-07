@@ -26,15 +26,23 @@ const OrderForm = (props) => {
     setInputDeliveredAt(event.target.value);
   };
 
+  const [isValidName, setValidName] = useState(true);
+
   const submitOrder = (event) => {
     event.preventDefault();
 
+    if (inputCustomerName.trim().length == 0) {
+      setValidName(false);
+      return;
+    }
     const newOrder = {
       deliveredAt: new Date(inputDeliveredAt),
       customer_name: inputCustomerName,
       customer_email: inputCustomerEmail,
       customer_phone: inputCustomerPhone,
     };
+
+    console.log(newOrder);
     props.onSaveOrder(newOrder);
   };
 
@@ -50,6 +58,9 @@ const OrderForm = (props) => {
             <div className="col-md-6">
               <label>Customer: </label>
               <input
+                style={{
+                  border: !isValidName ? '2px solid red' : '1px solid #c4c4c4',
+                }}
                 className="form-control"
                 type="text"
                 value={inputCustomerName}
@@ -94,16 +105,13 @@ const OrderForm = (props) => {
         <div className="form-group">
           <div className="row">
             <div className="col-md-6">
-              <button
-                className="btn btn-primary form-control"
-                cnClick={cancelHandler}
-              >
+              <button className="btn form-control" onClick={cancelHandler}>
                 Cancel
               </button>
             </div>
             <div className="col-md-6">
               <button
-                className="btn btn-primary form-control"
+                className="btn form-control"
                 type="submit"
                 onClick={submitOrder}
               >

@@ -34,10 +34,18 @@ const Home = () => {
           />
         </div>
         <div className="col-sm-6 col-md-4">
-          <CardModule icon="fas fa-trash fa-3x" link="/clientes" />
+          <CardModule
+            name="Estoque"
+            icon="fas fa-trash fa-3x"
+            link="/clientes"
+          />
         </div>
         <div className="col-sm-6 col-md-4">
-          <CardModule icon="fas fa-trash fa-3x" link="/clientes" />
+          <CardModule
+            name="Outros"
+            icon="fas fa-trash fa-3x"
+            link="/clientes"
+          />
         </div>
       </div>
     </div>

@@ -1,4 +1,12 @@
 .orders {
   margin: auto;
-  margin-top: 6rem;
+  margin-top: 2rem;
+  background-color: var(--terciary-green);
+  padding: 1rem;
+  border-radius: 1rem;
+
+  h2 {
+    text-align: center;
+    color: #5a5a5a;
+  }
 }

@@ -1,11 +1,25 @@
-.app {
-  width: 60%;
-  height: 100vh;
-  margin: auto;
+@media (min-width: 720px) {
+  .app {
+    height: 100vh;
+    background: var(--secondary-green);
+    position: relative;
+
+    .content {
+      width: 60%;
+      margin: auto;
+      padding: 8rem 0;
+    }
+  }
 }
 
 @media (max-width: 720px) {
   .app {
-    width: 90%;
+    background: var(--secondary-green);
+
+    .content {
+      width: 90%;
+      margin: auto;
+      padding: 8rem 0;
+    }
   }
 }
