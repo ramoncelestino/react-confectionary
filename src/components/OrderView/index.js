@@ -61,7 +61,13 @@ const OrderView = () => {
   };
 
   const [filteredData, setFilteredData] = useState(orderData);
+
   const searchOrderHandler = (event) => {
+    if (searchedName.length == 0) {
+      setFilteredData(orderData);
+      return;
+    }
+
     setFilteredData(
       orderData.filter((order) => order.customer_name == searchedName)
     );

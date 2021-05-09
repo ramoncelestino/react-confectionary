@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DateBox from '../DateBox';
 import OrderDetails from '../OrderDetails';
 import style from './order.module.scss';
 
@@ -11,6 +12,7 @@ const Order = (props) => {
   return (
     <>
       <div className={style.order} onClick={seeDetailsHandler}>
+        <DateBox date={props.order.delivery_date} />
         <h1>{props.order.customer_name}</h1>
       </div>
       {isDetail && <OrderDetails details={props.order} />}

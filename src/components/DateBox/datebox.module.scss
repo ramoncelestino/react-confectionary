@@ -1,0 +1,19 @@
+.date_box {
+  background: var(--primary-pink);
+  display: flex;
+  flex-direction: column;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.25rem;
+  margin-right: 3rem;
+  border-radius: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+
+  h6 {
+    position: absolute;
+    top: 40px;
+    font-size: 0.8rem;
+  }
+}
