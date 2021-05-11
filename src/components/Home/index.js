@@ -29,14 +29,14 @@ const Home = () => {
         <div className="col-sm-6 col-md-4">
           <CardModule
             name="Encomendas"
-            icon="fas fa-trash fa-3x"
+            icon="fas fa-shopping-cart fa-3x"
             link="/orders/"
           />
         </div>
         <div className="col-sm-6 col-md-4">
           <CardModule
             name="Estoque"
-            icon="fas fa-trash fa-3x"
+            icon="fas fa-clipboard fa-3x"
             link="/clientes"
           />
         </div>
