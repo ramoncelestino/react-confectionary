@@ -12,8 +12,8 @@ const Order = (props) => {
   return (
     <>
       <div className={style.order} onClick={seeDetailsHandler}>
-        <DateBox date={props.order.delivery_date} />
-        <h1>{props.order.customer_name}</h1>
+        <DateBox date={props.order.deliveredAt} />
+        <h1>{props.order.customer.name}</h1>
       </div>
       {isDetail && <OrderDetails details={props.order} />}
     </>

@@ -9,7 +9,7 @@ const Home = () => {
           <CardModule
             name="Clientes"
             icon="fas fa-users fa-3x"
-            link="/clientes"
+            link="/customers/"
           />
         </div>
         <div className="col-sm-6 col-md-4">
@@ -23,7 +23,7 @@ const Home = () => {
           <CardModule
             name="Produtos"
             icon="fas fa-birthday-cake fa-3x"
-            link="/clientes"
+            link="/clientes/"
           />
         </div>
         <div className="col-sm-6 col-md-4">

@@ -1,9 +1,14 @@
 import styles from './datebox.module.scss';
-
+import moment from 'moment';
 const DateBox = (props) => {
-  const month = props.date.toLocaleString('pt-BR', { month: 'long' });
-  const day = props.date.toLocaleString('pt-BR', { day: '2-digit' });
-  const year = props.date.getFullYear();
+  console.log(props.date);
+  var selected_date = new Date('{{ props.date.isoformat }}');
+  console.log(selected_date);
+
+  var momentDate = moment(props.date, 'YYYY-MM-DDTHH:mm:ss+-HH:mm:ss');
+
+  const month = momentDate.toDate().toLocaleString('pt-BR', { month: 'long' });
+  const day = momentDate.toDate().toLocaleString('pt-BR', { day: '2-digit' });
 
   return (
     <div className={styles.date_box}>

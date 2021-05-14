@@ -1,0 +1,23 @@
+.customer_view {
+  .search {
+    background: var(--terciary-green);
+    border-radius: 1rem;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--terciary-green);
+
+    input {
+      width: 90%;
+    }
+
+    button {
+      margin-left: 0.5rem;
+      background: var(--secondary-pink);
+      color: white;
+    }
+  }
+}
