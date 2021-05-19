@@ -29,8 +29,13 @@ a {
 
   @media (max-width: 720px) {
     .card_module {
-      width: 12rem;
-      height: 12rem;
+      width: 10rem;
+      height: 10rem;
+      margin-right: 0;
+    }
+
+    h3 {
+      font-size: 1.2rem;
     }
   }
 }
